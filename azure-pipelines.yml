@@ -17,5 +17,5 @@ steps:
 
 - script: |
     npm install
-    echo "This is a test"
+    npm run test2
   displayName: 'npm install and build'
