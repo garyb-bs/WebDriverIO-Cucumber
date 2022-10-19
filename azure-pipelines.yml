@@ -17,11 +17,10 @@ steps:
 - task: BrowserStackConfig@0
   inputs:
     BrowserStackServiceEndPoint: 'BS_Demo_Creds'
-- task: BrowserStackResults@1
-  inputs:
-    browserstackProduct: 'automate'
-
 - script: |
     npm install
     npm run on-prem
   displayName: 'npm install and build'
+- task: BrowserStackResults@1
+  inputs:
+    browserstackProduct: 'automate'
