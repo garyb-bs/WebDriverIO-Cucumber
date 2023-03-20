@@ -6,7 +6,7 @@ const ConfirmationPage = require('../pages/confirmation.page')
 const OrdersPage = require('../pages/orders.page')
 
 Given('the user is on login page', async () => {
-    browser.url('https://bstackdemo.com/signin')
+    browser.url('')
     HomePage.signInLink.click()
 })
 
