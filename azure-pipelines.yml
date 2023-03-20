@@ -19,7 +19,7 @@ steps:
     BrowserStackServiceEndPoint: 'BS_Demo_Creds'
 - script: |
     npm install
-    npm run bstack-single
+    npm run bstack-parallel-browsers
   displayName: 'npm install and build'
 - task: BrowserStackResults@1
   inputs:
