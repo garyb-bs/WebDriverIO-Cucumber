@@ -4,7 +4,7 @@ const _ = require('lodash');
 const expectChai = require('chai').expect;
 
 Given('the user is on home page', async () => {
-    browser.url('https://bstackdemo.com')
+    browser.url('')
 })
 
 When('the user applies Apple Vendor Filter', async () => {
