@@ -8,6 +8,9 @@ const overrides = {
     specs: [
         './resources/features/*.feature'
     ],
+    exclude: [
+        './resources/features/user.feature'
+    ],
     maxInstances: 5,
     capabilities: [{
         'bstack:options': {
