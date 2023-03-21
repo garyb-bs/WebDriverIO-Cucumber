@@ -1,4 +1,8 @@
-![Logo](https://www.browserstack.com/images/static/header-logo.jpg)
+<p float="left">
+    <img src="https://www.browserstack.com/images/static/header-logo.jpg" width="350">
+    <img src="https://www.fleekitsolutions.com/wp-content/uploads/2020/04/webdriverio.png" height="100" width="200">
+    <img src="https://brandslogos.com/wp-content/uploads/images/large/cucumber-logo.png" height="100" width="100">
+</p>
 
 # BrowserStack Examples Cucumber WebdriverIO <a href="https://webdriver.io/"><img src="https://avatars.githubusercontent.com/u/72550141?s=48&v=4" alt="WebdriverIO" height="22" /></a> <a href="https://nodejs.org/en/"><img src="https://brandslogos.com/wp-content/uploads/images/large/nodejs-icon-logo.png" alt="nodejs" height="22" /></a> <a href="https://mochajs.org/"><img src="https://brandslogos.com/wp-content/uploads/images/large/mocha-logo.png" alt="mochs" height="22" /></a>
 
@@ -37,8 +41,6 @@ The WebDriverIO tests are run on different platforms like on-prem, docker and Br
   | Offers   | Offers for Mumbai location     | This test mocks the GPS location for Mumbai and verifies that the product offers applicable for the Mumbai location are shown.   |
   | Product  | Apply Apple Vendor Filter          | This test verifies that the Apple products are only shown if the Apple vendor filter option is applied. |
   | Product  | Apply Lowest to Highest Order By   | This test verifies that the product prices are in ascending order when the product sort "Lowest to Highest" is applied. |
-  | User     | Login as User with no image loaded | This test verifies that the product images load for user: "image_not_loading_user" on the e-commerce application. Since the images do not load, the test case assertion fails.|
-  | User     | Login as User with existing Orders |  This test verifies that existing orders are shown for user: "existing_orders_user"  |
   
   ---
 
