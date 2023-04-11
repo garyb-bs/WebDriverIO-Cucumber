@@ -29,7 +29,7 @@ stages:
       - script: |
           npm install
           npm run bstack-single
-        displayName: 'Run a single test'
+        displayName: 'Run single test'
 
 - stage: ParallelTest
   displayName: 'Parallel Run Test'
