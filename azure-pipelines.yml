@@ -24,7 +24,7 @@ stages:
 
 - stage: SingleTest
   displayName: 'Single Run Test'
-  dependsOn: Build
+  dependsOn: Config
   jobs:
   - job: SingleRun
     displayName: 'Single Run Test'
@@ -36,7 +36,7 @@ stages:
 
 - stage: ParallelTest
   displayName: 'Parallel Run Test'
-  dependsOn: Build
+  dependsOn: Config
   jobs:
   - job: ParallelRun
     displayName: 'Parallel Run Test'
