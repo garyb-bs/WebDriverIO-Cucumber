@@ -1,0 +1,32 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+- stage: Config
+  displayName: 'Config'
+  jobs:
+  - job: NodeInstall
+    displayName: 'Install Node'
+    steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '16.x'
+        displayName: 'Install Node.js'
+
+- stage: ParallelTest
+  displayName: 'Parallel Run Test'
+  dependsOn: Config
+  jobs:
+  - job: ParallelRun
+    displayName: 'Parallel Run Test'
+    steps:
+      - task: BrowserStackConfig@0
+        inputs:
+            BrowserStackServiceEndPoint: 'BS_Demo_Creds'
+      - script: |
+          npm install
+          npm run bstack-parallel-browsers
+        displayName: 'Run tests in parallel'
