@@ -20,15 +20,12 @@ stages:
   displayName: 'Single Run Test'
   dependsOn: Config
   jobs:
-  - job: BSConfig
-    displayName: 'BrowserStack Config'
-    steps:
-      - task: BrowserStackConfig@0
-        inputs:
-          BrowserStackServiceEndPoint: 'BS_Demo_Creds'
   - job: SingleRun
     displayName: 'Single Run Test'
     steps:
+      - task: BrowserStackConfig@0
+        inputs:
+            BrowserStackServiceEndPoint: 'BS_Demo_Creds'
       - script: |
           npm install
           npm run bstack-single
@@ -41,6 +38,9 @@ stages:
   - job: ParallelRun
     displayName: 'Parallel Run Test'
     steps:
+      - task: BrowserStackConfig@0
+        inputs:
+            BrowserStackServiceEndPoint: 'BS_Demo_Creds'
       - script: |
           npm install
           npm run bstack-parallel-browsers
