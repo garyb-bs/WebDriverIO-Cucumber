@@ -15,7 +15,6 @@ stages:
         inputs:
           versionSpec: '16.x'
         displayName: 'Install Node.js'
-  jobs:
   - job: BSConfig
     displayName: 'BrowserStack Config'
     steps:
