@@ -1,26 +1,48 @@
-# Node.js
-# Build a general Node.js project with npm.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
-
 trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
-steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '16.x'
-  displayName: 'Install Node.js'
-- task: BrowserStackConfig@0
-  inputs:
-    BrowserStackServiceEndPoint: 'BS_Demo_Creds'
-- script: |
-    npm install
-    npm run bstack-parallel-browsers
-  displayName: 'npm install and build'
-- task: BrowserStackResults@1
-  inputs:
-    browserstackProduct: 'automate'
+stages:
+- stage: Config
+  displayName: 'Config'
+  jobs:
+  - job: NodeInstall
+    displayName: 'Install Node'
+    steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '16.x'
+        displayName: 'Install Node.js'
+  jobs:
+  - job: BSConfig
+    displayName: 'BrowserStack Config'
+    steps:
+      - task: BrowserStackConfig@0
+        inputs:
+          BrowserStackServiceEndPoint: 'BS_Demo_Creds'
+
+- stage: SingleTest
+  displayName: 'Single Run Test'
+  dependsOn: Build
+  jobs:
+  - job: SingleRun
+    displayName: 'Single Run Test'
+    steps:
+      - script: |
+          npm install
+          npm run bstack-single
+        displayName: 'Run a single test'
+
+- stage: ParallelTest
+  displayName: 'Parallel Run Test'
+  dependsOn: Build
+  jobs:
+  - job: ParallelRun
+    displayName: 'Parallel Run Test'
+    steps:
+      - script: |
+          npm install
+          npm run bstack-parallel-browsers
+        displayName: 'Run tests in parallel'
