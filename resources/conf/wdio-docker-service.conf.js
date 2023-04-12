@@ -13,7 +13,7 @@ const overrides = {
         browserName: 'chrome',
         acceptInsecureCerts: true
     }],
-    baseUrl: 'https://bstackdemo.com/',
+    baseUrl: 'https://bstacdemo.com/',
     services: ['docker'],
     dockerOptions: {
         image: 'selenium/standalone-chrome',
