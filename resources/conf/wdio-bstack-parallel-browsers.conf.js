@@ -7,7 +7,7 @@ const overrides = {
     key: process.env.BROWSERSTACK_ACCESS_KEY || 'BROWSERSTACK_ACC_KEY',
     
     specs: [
-        './resources/features/*.feature'
+        './resources/features/e2e.feature'
     ],
 
     maxInstances: 5,
