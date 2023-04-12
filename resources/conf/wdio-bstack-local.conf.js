@@ -12,7 +12,7 @@ const overrides = {
     capabilities: [{
         'bstack:options': {
             'projectName': 'BrowserStack',
-            'buildName': process.env.BROWSERSTACK_BUILD_NAME || 'bs-examples-webdriverio - ' + timeStamp,
+            'buildName': process.env.BROWSERSTACK_BUILD_NAME || 'browserstack-examples-webdriverio - ' + timeStamp,
             'debug': true,
             'networkLogs': true,
             'video': true,
